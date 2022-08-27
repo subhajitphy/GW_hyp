@@ -18,7 +18,7 @@ z=waveform(M,q,et0,b,ti,tf,t_step,inc,distance,psrra, psrdec,gwra,gwdec,rrmethod
 
 -> z.hp, z.hx, z.response, z.prefitres, z.postfitres returns the hp, hx array, 
 reponse of GW (F_+ h_+ +F_x h_x), prefit residuals and post fit residuals respectively
-IF rrmethod='dudt' the solver used usual LAL implement : (u,e_t,n) approach. BY DEFAULT it is set to be PTA approach: (l,e_t,n).
+IF rrmethod='dudt' the solver used usual LAL implement : (u,e_t,n) approach. BY DEFAULT it is set to be in accordance with PTA approach: (l,e_t,n).
 
 z1=waveform(M,q,et0,b,ti,tf,t_step,inc,distance,estimatepeak='True')
 
