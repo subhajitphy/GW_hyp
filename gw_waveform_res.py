@@ -126,7 +126,7 @@ def hyp_pta_res(toas,
     cos_inc     is the cos inclination of the GW source
     log10_M     is the log10 total mass of the GW source in solar mass
     q           is the mass ratio of the GW source
-    b           is the impact parameter of the GW source in solar mass
+    b           is the impact parameter of the GW source in total mass
     e0          is the eccentricity of the GW source
     log10_z     is the log10 cosmological redshift of the GW source
     tref        is the fiducial time in s in SSB frame
