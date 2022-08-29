@@ -111,6 +111,7 @@ def hyp_pta_res(toas,
     b,
     e0,
     log10_z,
+    tref,
     interp_steps=1000
 ):
     """
@@ -128,6 +129,7 @@ def hyp_pta_res(toas,
     b           is the impact parameter of the GW source in solar mass
     e0          is the eccentricity of the GW source
     log10_z     is the log10 cosmological redshift of the GW source
+    tref        is the fiducial time in s in SSB frame
     interp_steps is the number of samples used for interpolating the PTA signal
     """
     order = 3
@@ -135,13 +137,15 @@ def hyp_pta_res(toas,
     z = 10**log10_z
     D_GW = 1e6 * Planck18.luminosity_distance(z).value * pc # meter
 
+    ts = toas - tref
+
     # ti, tf, tzs in seconds, in source frame
-    ti = min(toas)/(1+z)
-    tf = max(toas)/(1+z)
+    ti = min(ts)/(1+z)
+    tf = max(ts)/(1+z)
     tz_arr = np.linspace(ti, tf, interp_steps)
     delta_t_arr = (tz_arr[1]-tz_arr[0]) * (1+z) # second, in SSB frame
 
-    tzs = toas/(1+z)
+    tzs = ts/(1+z)
     
     M = 10**log10_M # Solar mass
 
