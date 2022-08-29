@@ -2,7 +2,7 @@ The source code for plotting every element is gw_waveform_res.py //
 
 All usage has been shown in the enclosed jupyter notebook. //
 
-#M in solar mass //
+#M in total mass in solar mass //
 #q is mass ratio // 
 #et0 is is the initial eccentricity // 
 #b is the impact parameter in the units of M. // 
