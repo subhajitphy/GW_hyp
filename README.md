@@ -13,7 +13,7 @@ All usage has been shown in the enclosed jupyter notebook.
 * psrra is the PSR RA and Dec in radian. similar for GW source. 
 
 
-The $h_{+,\times}$, pre and post-fir residuals can be obtined with
+The $h_{+,\times}$, pre and post-fit residuals can be obtined with
 ```z=waveform(M,q,et0,b,ti,tf,t_step,inc,distance,psrra, psrdec,gwra,gwdec,rrmethod='None') ```
 
 * z.hp, z.hx, z.response, z.prefitres, z.postfitres returns the hp, hx array,   
