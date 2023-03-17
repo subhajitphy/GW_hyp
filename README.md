@@ -17,7 +17,7 @@ The $h_{+,\times}$, pre and post-fit residuals can be obtined with
 ```z=waveform(M,q,et0,b,ti,tf,t_step,inc,distance,psrra, psrdec,gwra,gwdec,rrmethod='None') ```
 
 * z.hp, z.hx, z.response, z.prefitres, z.postfitres returns the hp, hx array,   
-reponse of GW ($F_+ h_+ +F_\times h_\times$), prefit residuals and post fit residuals respectively. 
+reponse of GW ($R=F_+ h_+ +F_\times h_\times$), prefit residuals and post fit residuals respectively. 
 
 * If rrmethod='dudt' the solver used usual LAL implement : (u,e_t,n) approach. BY DEFAULT it is set to be in accordance with PTA approach: (l,e_t,n).
 
