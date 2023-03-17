@@ -30,6 +30,10 @@ def odes(eta,b1,y,t):
     dudt_2PN=(1/8*(-1+et)*((1+et)/(-1+et))**(1/2)*n*(-60+24*eta+et*(-15+eta)*eta*cos(2*arctan(
     ((1+et)/(-1+et))**(1/2)*tanh(1/2*u))))/(et**2-1)**(1/2)/(1-et*cosh(u))**2/(-1+et*
     cosh(u)))
+
+    dudt_25PN=(8*(1-et**2)/(15*w**7)*eta*sinh(u)*(24*cosh(u)-26*et-9*et**2*cosh(u)
+            +8*et*cosh(u)**2+3*et**2*cosh(u)**3))
+
     dudt_3PN=(1/6720*(1-et)*n*cosh(1/2*u)**2*(-840*et*((1+et)/(-1+et))**(1/2)*(4-eta)*(60-24*
     eta-et*(-15+eta)*eta*cos(2*arctan(((1+et)/(-1+et))**(1/2)*tanh(1/2*u))))*cosh(u)
     *(1-et*cosh(u))*sech(1/2*u)**2+35*((1+et)/(-1+et))**(1/2)*(8640+(123*pi**2-13184)*
@@ -45,7 +49,7 @@ def odes(eta,b1,y,t):
     *eta*sin(2*arctan(((1+et)/(-1+et))**(1/2)*tanh(1/2*u)))*tanh(1/2*u))/(et**2-1)**(3
     /2)/(1-et*cosh(u))**2/(-1+et*cosh(u))**2)
 
-    dudt= n*(dudt_Q+x**2*dudt_2PN+x**3*dudt_3PN)
+    dudt= n*(dudt_Q+x**2*dudt_2PN+x**(5/2)*dudt_25PN+x**3*dudt_3PN)
 
     return [(dedt_Q),(dndt_Q),dudt]
     #return [(dedt_Q+dedt_1PN),(dndt_Q+dndt_1PN),dldt]
@@ -73,5 +77,3 @@ def solve_rr3(eta,b1,y0,Ti,Tf):
     Uarr=sol.y[2]
     Tarr=sol.t
     return Earr, Narr, Uarr, Tarr
-
-
