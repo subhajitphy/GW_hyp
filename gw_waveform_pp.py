@@ -75,7 +75,6 @@ def get_hyp_waveform(M,q,et0,b,ti,tf,t_step,inc,distance,order
             phit=phitx(eta,et,u,x,order)
             rt=rtx(eta,et,u,x,order)
             phi=phiv(eta,et,u,x,order)
-            phi=phiv(eta,et,u,x,order)
             r1=rx(eta,et,u,x,order)
             X[i]=r1*cos(phi)
             Y[i]=r1*sin(phi)
